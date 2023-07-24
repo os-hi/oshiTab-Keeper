@@ -14,36 +14,40 @@ if (leadsFromLocalStorage) {
 }
 
 saveLogo.addEventListener("click", function(){
-    saveActiveTab()
-})
-
-function saveActiveTab() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        bookMarks.push(tabs[0].url)
+    bookMarks.push(tabs[0].url)
     localStorage.setItem("bookMarks", JSON.stringify(bookMarks) )
     render(bookMarks)
   });
-}
+})
 
-function render(urlNotConvertFavicon){
+// function saveActiveTab() {
+//     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+//         bookMarks.push(tabs[0].url)
+//     localStorage.setItem("bookMarks", JSON.stringify(bookMarks) )
+//     render(bookMarks)
+//   });
+// }
+
+function render(urlNotConvertFavicon) {
     function faviconURL(origin) {
-        const url = new URL(chrome.runtime.getURL('/_favicon/'));
-        url.searchParams.set('pageUrl', origin); // this encodes the URL as well
-        url.searchParams.set('size', '32');
-        return url.toString();
-    }  
-    let img = document.createElement('img');
-    let anchor = document.createElement('a');  
-    for (let i = 0; i < urlNotConvertFavicon.length; i++) {
-        img.src = faviconURL(urlNotConvertFavicon[i]);
-        anchor.href = urlNotConvertFavicon[i];
-        anchor.target = "_blank"
-        document.body.appendChild(img);
-        anchor.appendChild(img)
-        addIcon.appendChild(anchor)    
-       // localStorage.setItem("myLeads", JSON.stringify(myLeads))
+      const url = new URL(chrome.runtime.getURL('/_favicon/'));
+      url.searchParams.set('pageUrl', origin); // this encodes the URL as well
+      url.searchParams.set('size', '32');
+      return url.toString();
     }
-}
+  
+    for (let i = 0; i < urlNotConvertFavicon.length; i++) {
+      let img = document.createElement('img');
+      let anchor = document.createElement('a');
+      img.src = faviconURL(urlNotConvertFavicon[i]);
+      anchor.href = urlNotConvertFavicon[i];
+      anchor.target = "_blank";
+      anchor.appendChild(img);
+      addIcon.appendChild(anchor);
+    }
+  }
+  
 
 addFolderButton.addEventListener("click", function(){
     newFolder.classList.toggle("show")
