@@ -75,6 +75,12 @@ h4>input:hover{
     flex-wrap: wrap;
     gap: 10px;
 }
+.iconList{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style:none;
+}
 .icon{
     margin-left: 10px;
     width: 35px;
