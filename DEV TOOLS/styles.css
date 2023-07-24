@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;800&display=swap');
+*{
+    font-family: 'Tektur', cursive;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    margin: 0;
+    width: 350px;
+    min-width: 350px;
+    height: 250px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: #F2EAD3;
+    position: relative;
+}
+nav{
+    margin-top: 0;
+    font-size: 15px;
+    font-family: 'Tektur', cursive;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid #3F2305;
+    box-sizing: border-box;
+    color: #3F2305;
+    padding-left: 5px;
+    box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
+    -webkit-box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
+    -moz-box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
+}
+section{
+    padding: 10px;
+}
+section>h4{
+    width: 200px;
+    height: 25px;
+    margin-bottom: 0;
+    color: #3F2305;
+    opacity: 0.5;
+    font-size: 15px;
+    font-family: 'Tektur', cursive;
+    /* border: 1px solid black; */
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.createFolder{
+    width: 100px;
+    border: none;
+}
+hr{
+    margin-top: 0;
+}
+h4:hover{
+    opacity: 1;
+}
+h4>input{
+    border: none;
+    background-color: transparent;
+    color: #3F2305;
+    font-weight: bold;
+}
+h4>input:hover{
+    border: 1px solid gray;
+}
+#iconContainer{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.icon{
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 50%;
+    opacity: 0.5;
+    overflow: hidden;
+}
+#iconBtn{
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: transparent;
+}
+#iconBtn:hover{
+    margin-left: 10px;
+    width: 40px;
+    height:40px;
+    border: 1px solid #3F2305;
+    border-radius: 50%;
+    background-color:#F2EAD3 ;
+    color: #3F2305;
+    font-weight: bold;
+}
+
+.popUp{
+    width: 200px;
+    height: 50px;
+    background-color: #F2EAD3;
+    padding: 10px;
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: 1px solid #3F2305;
+    border-radius: 5px;
+    display: none;
+    overflow: hidden;
+}
+form{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: center;
+    object-fit: contain;
+}
+.createFolder{
+    width: 150px;
+    border: hidden;
+    border-bottom: 1px solid #3F2305;
+    background-color: transparent;
+    opacity: 0.5;
+}
+.addBtn{
+    width: 50px;
+    border-radius: 10px;
+    background-color: #F2EAD3;
+    color: #3F2305;
+    border: none;
+    opacity: 0.5;
+}
+
+.addBtn:hover{
+    width: 50px;
+    border-radius: 10px;
+    background-color: #3F2305;
+    color: #DFD7BF;
+    border: none; 
+    opacity: 1;
+}
+#delete{
+    position: absolute;
+    top: 70%;
+}
+#delete{
+    width: 70px;
+    position: absolute;
+    top: 70%;
+    background-color: #DFD7BF;
+    color: #3F2305;
+    border: 1px solid #3F2305;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#delete:hover{
+    width: 70px;
+    position: absolute;
+    top: 70%;
+    background-color: #3F2305;
+    color: #DFD7BF;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.show{
+    display: block;
+}
+/* .icon:hover{
+    width: 42px;
+    height: 33px;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
+.icon>h1{
+    margin-top: 0;
+    height: 35px;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+} */
