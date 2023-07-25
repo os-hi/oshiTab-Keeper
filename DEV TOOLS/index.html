@@ -8,22 +8,26 @@
 <body>
     <div class="container">
         <nav>OshiTab Keeper</nav>
-        <section >
-            <h4 id="createFolderName">create a folder
-                <input class="folder-btn" type="button" value="+" id="addFolderBtn"></input>
-            </h4>
-            <div class="popUp" id="formId">
-                <form action="">
-                    <input class="createFolder" type="text" placeholder="create-folder" id="create-btn"></input>
-                    <input class="addBtn" type="button" value="add" id="add-btn">
-                </form>
+        <section id="folder">
+<!--TODO #1: to be changed here, replce the h4 element with a form and add a delete button-->
+            <div class="subSection">
+                <h4 id="createFolderName">create a folder
+                    <input class="folder-btn" type="button" value="+" id="addFolderBtn"></input>
+                </h4>
             </div>
-                <hr>
+            <hr>
             <div id="iconContainer">
                 <input class="icon-btn" type="button" value="+" id="iconBtn">
             </div>
-
         </section>
+<!--TODO #2: to be changed here, popUp will be deleted -->
+        <div class="popUp" id="formId">
+            <form action="">
+                <input class="createFolder" type="text" placeholder="create-folder" id="create-btn"></input>
+                <input class="addBtn" type="button" value="add" id="add-btn">
+            </form>
+        </div>
+<!--TODO #3: to be removed since it will no longer serve its purpose -->
         <input type="button" value="delete" id="delete">
     </div>
     <script src="./script.js"></script>
