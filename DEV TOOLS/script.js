@@ -1,3 +1,5 @@
+let iconUrls = []
+const iconUrlsFromLocalStorage = JSON.parse( localStorage.getItem("iconUrls"))
 const darkLightMode = document.getElementById('dark-light-mode')
 const toggleOff = document.getElementById('toggle-off')
 const toggleOn = document.getElementById('toggle-on')
@@ -9,7 +11,12 @@ const addNewFolder = document.getElementById('new-folder')
 const deleteFolder = document.getElementById('deleteFolder')
 const currentFolder = document.getElementById('folder')
 const saveCurrentTabIcon = document.getElementById('saveTabIcon')
+const addIcon = document.querySelector(".addIconList")
 
+if (iconUrlsFromLocalStorage) {
+    iconUrls = iconUrlsFromLocalStorage
+    render(iconUrls)
+}
 
 darkLightMode.addEventListener("click",function(){
   switchDarkLightMode()
@@ -28,6 +35,13 @@ addNewFolder.addEventListener("click", function(){
 })
 deleteFolder.addEventListener("click", function(){
   removeFolder()
+})
+saveCurrentTabIcon.addEventListener("click", function(){
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    iconUrls.push(tabs[0].url)
+    localStorage.setItem("iconUrls", JSON.stringify(iconUrls) )
+    render(iconUrls)
+})
 })
 
 function switchDarkLightMode(){
@@ -58,6 +72,26 @@ function createNewFolder(){
 function removeFolder(){
   currentFolder.remove()
 }
+function render(iconUrls) {
+    function faviconURL(parseThis) {
+      const url = new URL(chrome.runtime.getURL('/_favicon/'));
+      url.searchParams.set('pageUrl', parseThis); // this encodes the URL as well
+      url.searchParams.set('size', '32');
+      return url.toString();
+    }
+
+    const anchorTags = addIcon.querySelectorAll("a");
+    anchorTags.forEach((aTag) => {addIcon.removeChild(aTag);});
+    for (let i = 0; i < iconUrls.length; i++) {
+      let img = document.createElement('img');
+      let anchor = document.createElement('a');
+      img.src = faviconURL(iconUrls[i]);
+      anchor.href = iconUrls[i];
+      anchor.target = "_blank";
+      anchor.appendChild(img);
+      addIcon.appendChild(anchor);
+    }
+}
 
 
 
@@ -89,7 +123,7 @@ function removeFolder(){
 
 
 
-// let iconUrls = []
+//  
 // const renameFolder = document.getElementById('createFolderName')
 // const addFolderButton = document.getElementById('addFolderBtn')
 // const newFolder = document.getElementById('formId')
@@ -111,15 +145,10 @@ function removeFolder(){
 // // Calls the render function, pushes active tab url to bookMarks array
 // // also sets the current item of localstorage with id "bookMarks"
 // saveIcon.addEventListener("click", function(){
-//     console.log("Step 1. I clicked the button")
-//     console.log("Step 2. Queried the active tab")
+
 //     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-//     console.log("Step 3. pushed url of current tab to iconsUrl")
 //     iconUrls.push(tabs[0].url)
-//     console.log(`${tabs[0].url}`)
-//     console.log("Step 4. set localstorage item with id iconUrls with iconUrls")
 //     localStorage.setItem("iconUrls", JSON.stringify(iconUrls) )
-//     console.log("Step 5. Called Render function passing the iconUrls")
 //     render(iconUrls)
 //   });
 // })
@@ -135,14 +164,8 @@ function removeFolder(){
 //       return url.toString();
 //     }
 
-//     console.log("Step 6. assigning all anchor element of addIcon to anchorTags")
 //     const anchorTags = addIcon.querySelectorAll("a");
-
-//     console.log("Removing anchor tags from addIcon")
 //     anchorTags.forEach((aTag) => {addIcon.removeChild(aTag);});
-
-//     console.log("Step 7. Looping all elemetns of urls which was passed as iconUrls") 
-
 //     for (let i = 0; i < iconUrls.length; i++) {
 //       let img = document.createElement('img');
 //       let anchor = document.createElement('a');
