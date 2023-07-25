@@ -1,203 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;800&display=swap');
+:root{
+    --textColor: #D5F5F6;
+    --bgColor: #1A1A1A;
+}
+
 *{
     font-family: 'Tektur', cursive;
-}
-body{
-    box-sizing: border-box;
     margin: 0;
-}
-.container{
-    margin: 0;
-    width: 350px;
-    min-width: 350px;
-    height: 250px;
-    border: 1px solid black;
+    padding: 0;
     box-sizing: border-box;
-    background-color: #F2EAD3;
-    position: relative;
+    user-select: none;
 }
-nav{
-    margin-top: 0;
-    font-size: 15px;
-    font-family: 'Tektur', cursive;
-    font-weight: bold;
-    border: none;
-    border-bottom: 1px solid #3F2305;
-    box-sizing: border-box;
-    color: #3F2305;
-    padding-left: 5px;
-    box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
-    -webkit-box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
-    -moz-box-shadow: -1px 7px 6px -6px rgba(89,80,80,0.79);
+main{
+    background: var(--bgColor);
+    color: var(--textColor);
+    width: 100px;
+    min-width: 300px;
+    max-height: 600px;
+    padding: 5px;
 }
-section{
-    padding: 10px;
-}
-section>h4{
-    width: 200px;
-    height: 25px;
-    margin-bottom: 0;
-    color: #3F2305;
-    opacity: 0.5;
-    font-size: 15px;
-    font-family: 'Tektur', cursive;
-    /* border: 1px solid black; */
-    margin-bottom: 0;
+header{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.createFolder{
-    width: 100px;
-    border: none;
-}
-hr{
-    margin-top: 0;
-}
-h4:hover{
-    opacity: 1;
-}
-h4>input{
-    border: none;
-    background-color: transparent;
-    color: #3F2305;
+    padding: 5px;
     font-weight: bold;
+    margin-bottom: 10%;
+    border-bottom: 1px solid var(--textColor);
 }
-h4>input:hover{
-    border: 1px solid gray;
-}
-#iconContainer{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.iconList{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    list-style:none;
-}
-.icon{
-    margin-left: 10px;
-    width: 35px;
-    height: 35px;
-    border: 1px solid black;
-    border-radius: 50%;
+header>i:hover{
+    cursor: pointer;
     opacity: 0.5;
-    overflow: hidden;
 }
-#iconBtn{
-    margin-left: 10px;
-    width: 35px;
-    height: 35px;
-    border: 1px solid gray;
-    border-radius: 50%;
-    background-color: transparent;
-}
-#iconBtn:hover{
-    margin-left: 10px;
-    width: 40px;
-    height:40px;
-    border: 1px solid #3F2305;
-    border-radius: 50%;
-    background-color:#F2EAD3 ;
-    color: #3F2305;
+nav{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     font-weight: bold;
+    padding: none;
+    padding-left: 5px;
+    padding-right: 10px;
+    margin-bottom: 10px;
 }
+nav>i{
+    opacity: 0.5;
+    color: var(--textColor);
 
-.popUp{
-    width: 200px;
-    height: 50px;
-    background-color: #F2EAD3;
-    padding: 10px;
-    position: absolute;
-    top: 50%;  
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    border: 1px solid #3F2305;
-    border-radius: 5px;
-    display: none;
-    overflow: hidden;
+}
+nav>i:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 form{
-    width: 200px;
-    height: 50px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content:space-between;
-    align-items: center;
-    object-fit: contain;
+    margin-left: 5px;
+    gap: 10px;
 }
-.createFolder{
+form>input{
     width: 150px;
-    border: hidden;
-    border-bottom: 1px solid #3F2305;
-    background-color: transparent;
-    opacity: 0.5;
-}
-.addBtn{
-    width: 50px;
-    border-radius: 10px;
-    background-color: #F2EAD3;
-    color: #3F2305;
     border: none;
-    opacity: 0.5;
+    background-color: var(--bgColor);
+    color: var(--textColor);
 }
 
-.addBtn:hover{
-    width: 50px;
-    border-radius: 10px;
-    background-color: #3F2305;
-    color: #DFD7BF;
-    border: none; 
-    opacity: 1;
-}
-#delete{
-    position: absolute;
-    top: 70%;
-}
-#delete{
-    width: 70px;
-    position: absolute;
-    top: 70%;
-    background-color: #DFD7BF;
-    color: #3F2305;
-    border: 1px solid #3F2305;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-#delete:hover{
-    width: 70px;
-    position: absolute;
-    top: 70%;
-    background-color: #3F2305;
-    color: #DFD7BF;
+form>input:hover{
+    opacity: 0.5;
     border: none;
-    border-radius: 5px;
-    margin-left: 5px;
+    cursor: pointer;
 }
-.show{
-    display: block;
+form>input:focus{
+    border: none;
+    outline: none;
 }
-/* .icon:hover{
-    width: 42px;
-    height: 33px;
-    border: 1px solid black;
-    border-radius: 50%;
+form>button{
+    border: none;
+    opacity: 0.5;
+    background-color: var(--bgColor);
+    color: var(--textColor);
     
 }
-.icon>h1{
-    margin-top: 0;
-    height: 35px;
-    object-fit: contain;
+form>button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.addIconList{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 250px;
+    height: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-} */
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.addIconList>button{
+    width: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+}
+.addIconList>button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+

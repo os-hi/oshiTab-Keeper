@@ -4,32 +4,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dev tool </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav>OshiTab Keeper</nav>
-        <section id="folder">
-<!--TODO #1: to be changed here, replce the h4 element with a form and add a delete button-->
-            <div class="subSection">
-                <h4 id="createFolderName">create a folder
-                    <input class="folder-btn" type="button" value="+" id="addFolderBtn"></input>
-                </h4>
-            </div>
+    <main class="container">
+        <header>OshiTab Keeper
+            <i class="fa fa-moon-o"></i>
+        </header>  
+        <nav>WebIcon
+            <i class="fa fa-toggle-off"></i>
+            <div></div>
+            <i class="fa fa-search"></i>
+           
+        </nav>   
+        <section id="webIcon">
+            <form action="">
+                <input type="text" placeholder="create new folder">
+                <button><i class="fa fa-plus"></i></button>
+                <button><i class="fa fa-edit"></i></button>
+                <button><i class="fa fa-trash-o"></i></button>
+                <button><i class="fa fa-mail-reply"></i></button>
+            </form>
             <hr>
-            <div id="iconContainer">
-                <input class="icon-btn" type="button" value="+" id="iconBtn">
+            <div class="addIconList">
+                <button><i class="fa fa-plus"></i></button>
+                <ul id="iconsList">
+
+                </ul>
             </div>
         </section>
-<!--TODO #2: to be changed here, popUp will be deleted -->
-        <div class="popUp" id="formId">
+        <!-- <nav>BookMark
+            <i class="fa fa-toggle-off"></i>
+            <div></div>
+            <i class="fa fa-search"></i>
+           
+        </nav>  
+        <section id="bookMark">
             <form action="">
-                <input class="createFolder" type="text" placeholder="create-folder" id="create-btn"></input>
-                <input class="addBtn" type="button" value="add" id="add-btn">
+                <input type="text" placeholder="create new folder">
+                <button><i class="fa fa-plus"></i></button>
+                <button><i class="fa fa-edit"></i></button>
+                <button><i class="fa fa-trash-o"></i></button>
+                <button><i class="fa fa-mail-reply"></i></button>
             </form>
-        </div>
-<!--TODO #3: to be removed since it will no longer serve its purpose -->
-        <input type="button" value="delete" id="delete">
-    </div>
+            <hr>
+            <div class="addIconList">
+                <button><i class="fa fa-plus"></i></button>
+                <ul id="iconsList">
+
+                </ul>
+            </div>
+        </section> -->
+
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

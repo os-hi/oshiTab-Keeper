@@ -64,26 +64,26 @@ function render(iconUrls) {
   }
   
 
-addFolderButton.addEventListener("click", function(){
-  console.log("addfolderButton")
-    newFolder.classList.toggle("show")
-    addButton.addEventListener("click", function(){
-        addFolder()
-    })
-})
+// addFolderButton.addEventListener("click", function(){
+//   console.log("addfolderButton")
+//     newFolder.classList.toggle("show")
+//     addButton.addEventListener("click", function(){
+//         addFolder()
+//     })
+// })
 
-function addFolder(){
-  console.log("Addfolder")
-    let createFolder = document.getElementById('create-btn')
-    renameFolder.textContent = createFolder.value
-    newFolder.classList.toggle("show")
-}
+// function addFolder(){
+//   console.log("Addfolder")
+//     let createFolder = document.getElementById('create-btn')
+//     renameFolder.textContent = createFolder.value
+//     newFolder.classList.toggle("show")
+// }
 
-deleteBtn.addEventListener("click", function() {
-    localStorage.clear()
-    bookMarks = []
-    let image = addIcon.lastChild;
-    addIcon.removeChild(image)
-    render(bookMarks)
-    // console.log("clicked")
-})
+// deleteBtn.addEventListener("click", function() {
+//     localStorage.clear()
+//     bookMarks = []
+//     let image = addIcon.lastChild;
+//     addIcon.removeChild(image)
+//     render(bookMarks)
+//     // console.log("clicked")
+// })
