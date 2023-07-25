@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;800&display=swap');
 :root{
-    --textColor: #D5F5F6;
-    --bgColor: #1A1A1A;
+    --bgColor1: #D5F5F6;
+    --textColor: #1A1A1A;
 }
 
 *{
@@ -11,27 +11,42 @@
     box-sizing: border-box;
     user-select: none;
 }
-main{
-    background: var(--bgColor);
+body{
+    background: var(--textColor);
+    color: var(--bgColor1);
+}
+.lightMode{
+    background: var(--bgColor1);
     color: var(--textColor);
+}
+
+main{
     width: 100px;
     min-width: 300px;
     max-height: 600px;
     padding: 5px;
+    border: 1px solid black;
 }
+
 header{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 5px;
     font-weight: bold;
-    margin-bottom: 10%;
-    border-bottom: 1px solid var(--textColor);
+}
+header>i{
+    transition:.2s ease all;
+    color: gray;
+}
+hr{
+    margin-bottom: 1rem;
 }
 header>i:hover{
     cursor: pointer;
     opacity: 0.5;
 }
+
 nav{
     display: flex;
     flex-wrap: nowrap;
@@ -44,8 +59,7 @@ nav{
 }
 nav>i{
     opacity: 0.5;
-    color: var(--textColor);
-
+    color: gray;
 }
 nav>i:hover{
     opacity: 1;
@@ -59,8 +73,8 @@ form{
 form>input{
     width: 150px;
     border: none;
-    background-color: var(--bgColor);
-    color: var(--textColor);
+    background-color: transparent;
+    color:gray;
 }
 
 form>input:hover{
@@ -75,9 +89,8 @@ form>input:focus{
 form>button{
     border: none;
     opacity: 0.5;
-    background-color: var(--bgColor);
-    color: var(--textColor);
-    
+    background-color: transparent;
+    color: gray;
 }
 form>button:hover{
     opacity: 1;
@@ -92,16 +105,19 @@ form>button:hover{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    
 }
 .addIconList>button{
     width: 30px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: none;
+    background-color: transparent;
+    opacity: 0.5;
+    border: 1px solid gray;
+    color: gray;
 }
 .addIconList>button:hover{
-    opacity: 0.5;
+    opacity: 1;
     cursor: pointer;
 }
-
 

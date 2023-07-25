@@ -9,53 +9,67 @@
 <body>
     <main class="container">
         <header>OshiTab Keeper
-            <i class="fa fa-moon-o"></i>
+            <i class="fa fa-sun-o" id="dark-light-mode"></i>
         </header>  
-        <nav>WebIcon
-            <i class="fa fa-toggle-off"></i>
-            <div></div>
-            <i class="fa fa-search"></i>
-           
-        </nav>   
-        <section id="webIcon">
-            <form action="">
-                <input type="text" placeholder="create new folder">
-                <button><i class="fa fa-plus"></i></button>
-                <button><i class="fa fa-edit"></i></button>
-                <button><i class="fa fa-trash-o"></i></button>
-                <button><i class="fa fa-mail-reply"></i></button>
-            </form>
             <hr>
-            <div class="addIconList">
-                <button><i class="fa fa-plus"></i></button>
-                <ul id="iconsList">
+        <div id="webIconSection">
+            <nav>WebIcon
+                <i class="fa fa-search" id="search-button"></i>
+                <div></div>
+                <div></div>
+                <i class="fa fa-toggle-off" id="toggle-off"></i>
+               
+            </nav>   
+            <section id="webIconFolder">
+                <div id="folder">
+                    <form action="">
+                        <input type="text" placeholder="create new folder" id="input-folder-name" disabled>
+                        <button><i class="fa fa-pencil-square-o" id="enterInput"></i></button>
+                        <button><i class="fa fa-check-square-o" id="new-folder"></i></button>
+                        <button><i class="fa fa-trash-o" id="deleteFolder"></i></button>
+                        <button><i class="fa fa-mail-reply"></i></button>
+                        <button><i class="fa fa-plus-square" id="saveTabIcon"></i></button>
+                    </form>
+                    <hr>
+                    <div class="addIconList">
+                        <ul id="iconsList">
+        
+                        </ul>
+                    </div>
+                </div>      
+            </section>
+        </div>       
+<!-- BOOKMARK HIDDEN, UNLESS TRIGGERED -->
+        <div id="bookMarkSection" hidden>
+            <nav>BookMark
+                <i class="fa fa-search"></i>
+                <div></div>
+                <div></div>
+                <i class="fa fa-toggle-on" id="toggle-on"></i>
 
-                </ul>
-            </div>
-        </section>
-        <!-- <nav>BookMark
-            <i class="fa fa-toggle-off"></i>
-            <div></div>
-            <i class="fa fa-search"></i>
-           
-        </nav>  
-        <section id="bookMark">
-            <form action="">
-                <input type="text" placeholder="create new folder">
-                <button><i class="fa fa-plus"></i></button>
-                <button><i class="fa fa-edit"></i></button>
-                <button><i class="fa fa-trash-o"></i></button>
-                <button><i class="fa fa-mail-reply"></i></button>
-            </form>
-            <hr>
-            <div class="addIconList">
-                <button><i class="fa fa-plus"></i></button>
-                <ul id="iconsList">
-
-                </ul>
-            </div>
-        </section> -->
-
+               
+            </nav>  
+            <section id="bookMark">
+                <div id="folder">
+                    <form action="">
+                        <input type="text" placeholder="create new folder" id="input-folder-name">
+                        <button id="enterInput"><i class="fa fa-pencil-square-o"></i></button>
+                        <button><i class="fa fa-check-square-o" id="new-folder"></i></button>
+                        <button><i class="fa fa-trash-o"></i></button>
+                        <button><i class="fa fa-mail-reply"></i></button>
+                        <button><i class="fa fa-plus-square"></i></button>
+    
+                    </form>
+                    <hr>
+                    <div class="addIconList">
+                        <ul id="iconsLists">
+        
+                        </ul>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
     </main>
     <script src="./script.js"></script>
 </body>
