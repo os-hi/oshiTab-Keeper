@@ -95,20 +95,28 @@ form>button:hover{
     opacity: 1;
     cursor: pointer;
 }
-
 .addIconList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
     margin-top: 10px;
     margin-left: 10px;
     width: 270px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    border-radius: 50%;
+}
+.addIconList>ul{
+    
+    list-style:none;
+    
 }
 
-ul{
+/* ul{
+    margin-top: 10px;
+    margin-left: 10px;
     border-radius: 50%;
     list-style:none;
     display: flex;
     flex-wrap: wrap;
-}
+    gap: 10px
+} */
 
